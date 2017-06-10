@@ -2,6 +2,9 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: rabbitmq
+  namespace: cat  
+  labels:
+    app: rabbitmq  
 spec:
   replicas: 3
   template:
@@ -11,7 +14,7 @@ spec:
     spec:
       containers:
       - name: rabbitmq
-        image: kuberstack/kubernetes-rabbitmq-autocluster
+        image: registry.cn-hangzhou.aliyuncs.com/patterncat/kubernetes-rabbitmq-autocluster:mgr
         ports:
           - containerPort: 5672
             name: port-5672

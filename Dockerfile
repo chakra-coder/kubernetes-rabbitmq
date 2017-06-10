@@ -11,3 +11,4 @@ ENV RABBITMQ_USE_LONGNAME=true \
 ADD plugins/*.ez /usr/lib/rabbitmq/lib/rabbitmq_server-3.6.8/plugins/
 
 RUN rabbitmq-plugins enable --offline autocluster
+RUN rabbitmq-plugins enable --offline rabbitmq_management
